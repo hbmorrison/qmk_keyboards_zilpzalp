@@ -1,3 +1,17 @@
+// Copyright 2026 Hannah Blythe Morrison
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     https://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 #pragma once
 
 #include QMK_KEYBOARD_H
@@ -31,6 +45,14 @@ enum {
   LAYER_MD_R
 };
 
+// Define custom keycodes.
+
+enum {
+  ZILPZALP_SAFE_RANGE = SAFE_RANGE,
+  M_SS,
+  M_VC
+};
+
 // Aliases for cut, copy and paste.
 
 #define A_CX RCTL(KC_X)
@@ -46,22 +68,6 @@ enum {
 // 1Password shortcut for quick access.
 
 #define A_QA C(S(KC_SPC))
-
-// Aliases for macros (should be in custom keys module).
-
-#define A_SS KC_PIPE
-#define A_VC KC_ESC
-
-// Aliases for modifiers.
-
-#define M_LA KC_LALT
-#define M_LC KC_LCTL
-#define M_LG KC_LGUI
-#define M_LS KC_LSFT
-#define M_RA KC_RALT
-#define M_RC KC_RCTL
-#define M_RG KC_RGUI
-#define M_RS KC_RSFT
 
 // Aliases for Windows previous and next tab / window / desktop.
 
@@ -85,5 +91,5 @@ enum {
 
 // Modifier layers are toggled.
 
-#define LT_RM LT(LAYER_MD_R, KC_SPC)
-#define LT_LM LT(LAYER_MD_L, KC_ENT)
+#define OS_LM OSL(LAYER_MD_L)
+#define OS_RM OSL(LAYER_MD_R)

@@ -2,20 +2,20 @@
 
 AUTO_SHIFT_ENABLE = yes
 CAPS_WORD_ENABLE  = yes
-COMBO_ENABLE      = yes
-
-# Enabling the console enables debug messages.
-
-CONSOLE_ENABLE = yes
 
 # Additional code.
 
 SRC += bootmagic.c
-SRC += capsword.c
 SRC += layers.c
+SRC += mods.c
+SRC += process.c
 
-# Combos need to be part of the introspection logic.
+# Optional code.
 
-ifeq ($(strip $(COMBO_ENABLE)), yes)
-  INTROSPECTION_KEYMAP_C = introspection.c
+ifeq ($(strip $(AUTO_SHIFT_ENABLE)), yes)
+  SRC += autoshift.c
+endif
+
+ifeq ($(strip $(CAPS_WORD_ENABLE)), yes)
+  SRC += capsword.c
 endif

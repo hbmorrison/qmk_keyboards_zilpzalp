@@ -9,18 +9,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_W,  KC_F,  KC_P,   KC_B,  KC_J,  KC_L,  KC_U,    KC_BSPC,
   KC_A, LT_RS, LT_RN, LT_RX,  KC_G,  KC_M,  LT_LX, LT_LN,   LT_LS,   KC_O,
         KC_X,  KC_C,  KC_D,                 KC_H,  KC_COMM, KC_DOT,
-                      KC_TAB, LT_RM, LT_LM, KC_ESC
+                      KC_NO, OS_LM, OS_RM, KC_NO
   ),
   [LAYER_BS_LX] = LAYOUT(
-         KC_Q, KC_NO,  KC_B,    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
-  KC_NO, KC_A, KC_TAB, KC_G,    KC_NO,   KC_NO,   KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,
-         KC_Z, A_ST,   KC_V,                      KC_NO,   KC_NO,   KC_NO,
+         KC_Q, A_ST,   KC_B,    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+  KC_NO, KC_A, KC_SPC, KC_G,    KC_NO,   KC_NO,   KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,
+         KC_Z, KC_TAB, KC_V,                      KC_NO,   KC_NO,   KC_NO,
                        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
   ),
   [LAYER_BS_RX] = LAYOUT(
-           KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_J,   KC_NO,  KC_Y,
-  KC_NO,   KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,   KC_NO,   KC_M,   KC_ESC, KC_O,    KC_NO,
-           KC_NO,   KC_NO,   KC_NO,                     KC_K,   A_VC,   KC_SLSH,
+           KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_J,   M_VC,   KC_Y,
+  KC_NO,   KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,   KC_NO,   KC_M,   KC_ENT, KC_O,    KC_NO,
+           KC_NO,   KC_NO,   KC_NO,                     KC_K,   KC_ESC, KC_SLSH,
                              KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
   ),
   [LAYER_SM_L] = LAYOUT(
@@ -48,10 +48,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
   ),
   [LAYER_NM_L] = LAYOUT(
-         KC_1, KC_2, KC_3,    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
-  KC_NO, KC_4, KC_5, KC_6,    KC_NO,   KC_NO,   KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,
-         KC_7, KC_8, KC_9,                      KC_NO,   KC_NO,   KC_NO,
-                     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
+          KC_1, KC_2, KC_3,    KC_SLSH, KC_NO,   KC_NO,   KC_NO,   KC_NO,
+  KC_DOT, KC_4, KC_5, KC_6,    KC_0,    KC_NO,   KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,
+          KC_7, KC_8, KC_9,                      KC_NO,   KC_NO,   KC_NO,
+                      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
   ),
   [LAYER_NM_LX] = LAYOUT(
          KC_NO,   KC_NO,  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
@@ -62,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [LAYER_NV_R] = LAYOUT(
          KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   W_PT,    KC_UP,   W_NT,
   KC_NO, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,   KC_NO,   KC_LEFT, KC_DOWN, KC_RIGHT, KC_NO,
-         KC_NO,   KC_NO,   KC_NO,                     W_PW,    A_SS,    W_NW,
+         KC_NO,   KC_NO,   KC_NO,                     W_PW,    M_SS,    W_NW,
                            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
   ),
   [LAYER_NV_RX] = LAYOUT(
@@ -90,15 +90,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
   ),
   [LAYER_MD_L] = LAYOUT(
-         KC_NO,   OS_LGUI, KC_NO,   KC_NO,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-  KC_NO, OS_LALT, OS_LCTL, OS_LSFT, KC_NO,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-         A_CX,    A_CC,    A_CV,                      KC_TRNS, KC_TRNS, KC_TRNS,
-                           KC_TRNS, CW_TOGG, KC_TRNS, KC_TRNS
+         KC_NO,   DM_LGUI, KC_NO,   KC_NO,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+  KC_NO, DM_LALT, DM_LCTL, DM_LSFT, KC_NO,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+         KC_NO,   KC_NO,   KC_NO,                     KC_TRNS, KC_TRNS, KC_TRNS,
+                           KC_TRNS, KC_TRNS, CW_TOGG, KC_TRNS
   ),
   [LAYER_MD_R] = LAYOUT(
-           KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,   KC_NO,   OS_LGUI, KC_NO,
-  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,   OS_LSFT, OS_LCTL, OS_LALT,  KC_NO,
-           KC_TRNS, KC_TRNS, KC_TRNS,                   KC_NO,   KC_NO,   KC_NO,
-                             KC_TRNS, KC_TRNS, CW_TOGG, KC_TRNS
+           KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,   KC_NO,   DM_RGUI, KC_NO,
+  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,   DM_RSFT, DM_RCTL, DM_RALT, KC_NO,
+           A_CX,    A_CC,    A_CV,                      KC_NO,   KC_NO,   KC_NO,
+                             KC_TRNS, CW_TOGG, KC_TRNS, KC_TRNS
   )
 };

@@ -1,5 +1,6 @@
 {
     "modules": [
-        "hbm/conditional_layers"
+        "hbm/conditional_layers",
+        "hbm/dynamic_mods"
     ]
 }

@@ -1,3 +1,17 @@
+// Copyright 2026 Hannah Blythe Morrison
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     https://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 #include QMK_KEYBOARD_H
 
 #include "conditional_layers.h"
@@ -16,26 +30,24 @@
 
 #define MASK_CT_R  (LAYER_BIT(LAYER_SM_R) | LAYER_BIT(LAYER_NV_R))
 
-// Set the conditional layers.
+// Add the conditional layers.
 
-void conditional_layer_set() {
+void add_conditional_layers() {
 
-  // Extended layers for number layer and left symbol layer.
+  // Add the extended number layer, extended nav layer and both extended symbol
+  // layers as conditional layers.
 
-  conditional_layer_set_mask(LAYER_NM_LX, MASK_NM_LX);
-  conditional_layer_set_mask(LAYER_SM_LX, MASK_SM_LX);
+  set_conditional_layer_mask(LAYER_NM_LX, MASK_NM_LX);
+  set_conditional_layer_mask(LAYER_NV_RX, MASK_NV_RX);
+  set_conditional_layer_mask(LAYER_SM_LX, MASK_SM_LX);
+  set_conditional_layer_mask(LAYER_SM_RX, MASK_SM_RX);
 
-  // Function layer and extended layer.
+  // Add the function layer and its extended layer as conditional layers.
 
-  conditional_layer_set_mask(LAYER_FN_L,  MASK_FN_L);
-  conditional_layer_set_mask(LAYER_FN_LX, MASK_FN_LX);
+  set_conditional_layer_mask(LAYER_FN_L,  MASK_FN_L);
+  set_conditional_layer_mask(LAYER_FN_LX, MASK_FN_LX);
 
-  // Extended layers for navigation layer and right symbol layer.
+  // Add the controls layer as a conditional layer.
 
-  conditional_layer_set_mask(LAYER_NV_RX, MASK_NV_RX);
-  conditional_layer_set_mask(LAYER_SM_RX, MASK_SM_RX);
-
-  // Controls layer.
-
-  conditional_layer_set_mask(LAYER_CT_R,  MASK_CT_R);
+  set_conditional_layer_mask(LAYER_CT_R,  MASK_CT_R);
 };
