@@ -16,10 +16,6 @@
 
 #include QMK_KEYBOARD_H
 
-// Declare functions.
-
-void debug(char *);
-
 // Define layers.
 
 enum {
@@ -45,14 +41,6 @@ enum {
   LAYER_MD_R
 };
 
-// Define custom keycodes.
-
-enum {
-  ZILPZALP_SAFE_RANGE = SAFE_RANGE,
-  M_SS,
-  M_VC
-};
-
 // Aliases for cut, copy and paste.
 
 #define A_CX RCTL(KC_X)
@@ -73,8 +61,6 @@ enum {
 
 #define W_PT C(S(KC_TAB))
 #define W_NT C(KC_TAB)
-#define W_PW A(S(KC_TAB))
-#define W_NW A(KC_TAB)
 #define W_PD C(G(KC_LEFT))
 #define W_ND C(G(KC_RIGHT))
 
@@ -91,5 +77,5 @@ enum {
 
 // Modifier layers are toggled.
 
-#define OS_LM OSL(LAYER_MD_L)
-#define OS_RM OSL(LAYER_MD_R)
+#define LT_LM LT(LAYER_MD_L, KC_SPC)
+#define LT_RM LT(LAYER_MD_R, KC_ENT)
